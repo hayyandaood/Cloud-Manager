@@ -1,0 +1,91 @@
+{
+    "doctype": "DocType",
+    "name": "Cloud Subscription Plan",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "autoname": "format:PLAN-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "plan_name",
+        "cpu_cores",
+        "ram_gb",
+        "storage_gb",
+        "monthly_price"
+    ],
+    "fields": [
+        {
+            "fieldname": "plan_name",
+            "label": "Plan Name",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "cpu_cores",
+            "fieldtype": "Int",
+            "label": "CPU Cores",
+            "reqd": 1
+        },
+        {
+            "fieldname": "ram_gb",
+            "fieldtype": "Float",
+            "label": "RAM (GB)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "storage_gb",
+            "fieldtype": "Float",
+            "label": "Storage (GB)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "monthly_price",
+            "fieldtype": "Currency",
+            "label": "Monthly Price",
+            "reqd": 1
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Customer",
+            "permlevel": 0,
+            "read": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "links": [
+        {"link_doctype": "Cloud Subscription", "link_fieldname": "plan"}
+    ],
+    "actions": [],
+    "states": []
+}

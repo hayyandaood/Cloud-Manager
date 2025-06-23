@@ -1,0 +1,107 @@
+{
+    "doctype": "DocType",
+    "name": "Cloud Invoice",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "autoname": "format:INV-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "invoice_date",
+    "sort_order": "DESC",
+    "field_order": [
+        "customer",
+        "cloud_subscription",
+        "invoice_date",
+        "total_amount",
+        "status",
+        "items"
+    ],
+    "fields": [
+        {
+            "fieldname": "customer",
+            "label": "Customer",
+            "fieldtype": "Link",
+            "options": "Cloud Customer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "cloud_subscription",
+            "label": "Cloud Subscription",
+            "fieldtype": "Link",
+            "options": "Cloud Subscription",
+            "reqd": 1
+        },
+        {
+            "fieldname": "invoice_date",
+            "label": "Invoice Date",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "total_amount",
+            "label": "Total Amount",
+            "fieldtype": "Currency",
+            "read_only": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "Draft\nUnpaid\nPaid\nOverdue",
+            "default": "Draft",
+            "reqd": 1
+        },
+        {
+            "fieldname": "items",
+            "fieldtype": "Table",
+            "label": "Invoice Items",
+            "options": "Cloud Invoice Item"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Customer",
+            "permlevel": 0,
+            "read": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "links": [
+        {"link_doctype": "Cloud Payment", "link_fieldname": "cloud_invoice"}
+    ],
+    "actions": [],
+    "states": [
+        {"state": "Draft", "style": "Warning"},
+        {"state": "Unpaid", "style": "Danger"},
+        {"state": "Paid", "style": "Success"},
+        {"state": "Overdue", "style": "Danger"}
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "doctype": "DocType",
+    "name": "Resource Access Log",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "autoname": "format:LOG-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "access_time",
+    "sort_order": "DESC",
+    "field_order": [
+        "resource",
+        "access_time",
+        "access_type",
+        "user"
+    ],
+    "fields": [
+        {
+            "fieldname": "resource",
+            "label": "Cloud Resource",
+            "fieldtype": "Link",
+            "options": "Cloud Server",
+            "reqd": 1
+        },
+        {
+            "fieldname": "access_time",
+            "label": "Access Time",
+            "fieldtype": "Datetime",
+            "reqd": 1
+        },
+        {
+            "fieldname": "access_type",
+            "label": "Access Type",
+            "fieldtype": "Select",
+            "options": "SSH\nAPI\nConsole",
+            "reqd": 1
+        },
+        {
+            "fieldname": "user",
+            "label": "User",
+            "fieldtype": "Link",
+            "options": "User",
+            "reqd": 1
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Customer",
+            "permlevel": 0,
+            "read": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "links": [],
+    "actions": [],
+    "states": []
+}

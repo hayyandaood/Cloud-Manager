@@ -1,0 +1,72 @@
+{
+    "doctype": "DocType",
+    "name": "Cloud Manager Settings",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "is_single": 1,
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 0,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "default_plan",
+        "monthly_quota",
+        "support_email",
+        "billing_cycle"
+    ],
+    "fields": [
+        {
+            "fieldname": "default_plan",
+            "label": "Default Plan",
+            "fieldtype": "Link",
+            "options": "Cloud Subscription Plan"
+        },
+        {
+            "fieldname": "monthly_quota",
+            "label": "Monthly Quota (GB)",
+            "fieldtype": "Float"
+        },
+        {
+            "fieldname": "support_email",
+            "label": "Support Email",
+            "fieldtype": "Data",
+            "options": "Email"
+        },
+        {
+            "fieldname": "billing_cycle",
+            "label": "Billing Cycle",
+            "fieldtype": "Select",
+            "options": "Monthly\nQuarterly\nYearly",
+            "default": "Monthly"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        }
+    ],
+    "links": [],
+    "actions": [],
+    "states": []
+}

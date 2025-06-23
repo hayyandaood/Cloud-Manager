@@ -1,0 +1,87 @@
+{
+    "doctype": "DocType",
+    "name": "Access Token",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "autoname": "hash",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "created_at",
+    "sort_order": "DESC",
+    "field_order": [
+        "customer",
+        "token",
+        "is_active",
+        "created_at"
+    ],
+    "fields": [
+        {
+            "fieldname": "customer",
+            "label": "Customer",
+            "fieldtype": "Link",
+            "options": "Cloud Customer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "token",
+            "label": "Token",
+            "fieldtype": "Data",
+            "read_only": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "is_active",
+            "label": "Is Active",
+            "fieldtype": "Check",
+            "default": "1"
+        },
+        {
+            "fieldname": "created_at",
+            "label": "Created At",
+            "fieldtype": "Datetime",
+            "read_only": 1
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Customer",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "links": [],
+    "actions": [],
+    "states": []
+}

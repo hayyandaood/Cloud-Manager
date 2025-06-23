@@ -1,0 +1,91 @@
+{
+    "doctype": "DocType",
+    "name": "Support Ticket",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "autoname": "format:TICKET-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "customer",
+        "subject",
+        "description",
+        "status"
+    ],
+    "fields": [
+        {
+            "fieldname": "customer",
+            "label": "Customer",
+            "fieldtype": "Link",
+            "options": "Cloud Customer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "subject",
+            "label": "Subject",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "description",
+            "label": "Description",
+            "fieldtype": "Text",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "Open\nIn Progress\nClosed",
+            "default": "Open",
+            "reqd": 1
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Customer",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "links": [],
+    "actions": [],
+    "states": [
+        {"state": "Open", "style": "Warning"},
+        {"state": "In Progress", "style": "Info"},
+        {"state": "Closed", "style": "Success"}
+    ]
+}

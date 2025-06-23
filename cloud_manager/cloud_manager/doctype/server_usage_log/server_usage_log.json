@@ -1,0 +1,73 @@
+{
+    "doctype": "DocType",
+    "name": "Server Usage Log",
+    "module": "Cloud Manager",
+    "custom": 0,
+    "is_child_table": 1,
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 0,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "timestamp",
+        "cpu_usage",
+        "ram_usage",
+        "storage_usage"
+    ],
+    "fields": [
+        {
+            "fieldname": "timestamp",
+            "fieldtype": "Datetime",
+            "label": "Timestamp",
+            "reqd": 1
+        },
+        {
+            "fieldname": "cpu_usage",
+            "fieldtype": "Float",
+            "label": "CPU Usage (%)"
+        },
+        {
+            "fieldname": "ram_usage",
+            "fieldtype": "Float",
+            "label": "RAM Usage (GB)"
+        },
+        {
+            "fieldname": "storage_usage",
+            "fieldtype": "Float",
+            "label": "Storage Usage (GB)"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Cloud Customer",
+            "permlevel": 0,
+            "read": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "links": [],
+    "actions": [],
+    "states": []
+}
