@@ -1,0 +1,87 @@
+<template>
+    <div class="container">
+        <h2>Welcome, {{ customer.customer_name }}</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Servers</h3>
+                <table class="table">
+                    <thead>
+                        <tr><th>Name</th><th>Type</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="server in servers">
+                            <td>{{ server.server_name }}</td>
+                            <td>{{ server.server_type }}</td>
+                            <td>{{ server.status }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3>Storage Plans</h3>
+                <table class="table">
+                    <thead>
+                        <tr><th>Name</th><th>Size (GB)</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="plan in storage_plans">
+                            <td>{{ plan.plan_name }}</td>
+                            <td>{{ plan.storage_size }}</td>
+                            <td>{{ plan.status }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Billing History</h3>
+                <table class="table">
+                    <thead>
+                        <tr><th>Type</th><th>Amount</th><th>Status</th><th>Due Date</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="bill in billing_records">
+                            <td>{{ bill.resource_type }}</td>
+                            <td>{{ bill.amount }}</td>
+                            <td>{{ bill.status }}</td>
+                            <td>{{ bill.due_date }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3>Access Keys</h3>
+                <table class="table">
+                    <thead>
+                        <tr><th>Name</th><th>Permissions</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="key in access_keys">
+                            <td>{{ key.key_name }}</td>
+                            <td>{{ key.permissions }}</td>
+                            <td>{{ key.status }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+frappe.ready(() => {
+    frappe.call({
+        method: "cloud_manager.cloud_manager.dashboard.customer_dashboard.get_dashboard_data",
+        callback: (r) => {
+            if (r.message.error) {
+                frappe.msgprint(r.message.error);
+                return;
+            }
+            new Vue({
+                el: ".container",
+                data: r.message
+            });
+        }
+    });
+});
+</script>

@@ -1,0 +1,82 @@
+{
+    "doctype": "DocType",
+    "name": "Cloud Customer",
+    "module": "Cloud Manager",
+    "autoname": "format:CM-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "customer_name",
+        "email",
+        "phone",
+        "address"
+    ],
+    "fields": [
+        {
+            "label": "Customer Name",
+            "fieldname": "customer_name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "label": "Email",
+            "fieldname": "email",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "unique": 1,
+            "options": "Email"
+        },
+        {
+            "label": "Phone",
+            "fieldname": "phone",
+            "fieldtype": "Phone"
+        },
+        {
+            "label": "Address",
+            "fieldname": "address",
+            "fieldtype": "Text"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Customer",
+            "permlevel": 1,
+            "read": 1,
+            "write": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "actions": [],
+    "links": [],
+    "states": []
+}

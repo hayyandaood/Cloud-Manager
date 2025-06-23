@@ -1,0 +1,93 @@
+{
+    "doctype": "DocType",
+    "name": "Access Key",
+    "module": "Cloud Manager",
+    "autoname": "format:KEY-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "customer_id",
+        "key_name",
+        "key_value",
+        "permissions",
+        "status"
+    ],
+    "fields": [
+        {
+            "label": "Customer",
+            "fieldname": "customer_id",
+            "fieldtype": "Link",
+            "options": "Cloud Customer",
+            "reqd": 1
+        },
+        {
+            "label": "Key Name",
+            "fieldname": "key_name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "label": "Key Value",
+            "fieldname": "key_value",
+            "fieldtype": "Password",
+            "reqd": 1
+        },
+        {
+            "label": "Permissions",
+            "fieldname": "permissions",
+            "fieldtype": "Select",
+            "options": "Read\nWrite\nAdmin",
+            "reqd": 1
+        },
+        {
+            "label": "Status",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "options": "Active\nRevoked",
+            "default": "Active"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Customer",
+            "permlevel": 1,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "actions": [],
+    "links": [],
+    "states": []
+}

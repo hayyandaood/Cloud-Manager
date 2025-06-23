@@ -1,8 +1,8 @@
 app_name = "cloud_manager"
-app_title = "Cloud Manager"
-app_publisher = "Hayyan Daood"
-app_description = "Cloud Hosting Management Module for Frappe"
-app_email = "hayyandaood90@gmail.com"
+app_title = "Cloud manager"
+app_publisher = "hayyan daood"
+app_description = "Cloud Manager"
+app_email = "hayyandaood@gmail.com"
 app_license = "mit"
 
 # Apps
@@ -15,7 +15,7 @@ app_license = "mit"
 # 	{
 # 		"name": "cloud_manager",
 # 		"logo": "/assets/cloud_manager/logo.png",
-# 		"title": "Cloud Manager",
+# 		"title": "Cloud manager",
 # 		"route": "/cloud_manager",
 # 		"has_permission": "cloud_manager.api.permission.has_app_permission"
 # 	}

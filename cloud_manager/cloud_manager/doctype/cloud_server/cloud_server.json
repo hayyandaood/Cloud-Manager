@@ -1,0 +1,96 @@
+{
+    "doctype": "DocType",
+    "name": "Cloud Server",
+    "module": "Cloud Manager",
+    "autoname": "format:SVR-{#####}",
+    "engine": "InnoDB",
+    "index_web_pages_for_search": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "field_order": [
+        "customer_id",
+        "server_name",
+        "server_type",
+        "ram",
+        "cpu_cores",
+        "status"
+    ],
+    "fields": [
+        {
+            "label": "Customer",
+            "fieldname": "customer_id",
+            "fieldtype": "Link",
+            "options": "Cloud Customer",
+            "reqd": 1
+        },
+        {
+            "label": "Server Name",
+            "fieldname": "server_name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "label": "Server Type",
+            "fieldname": "server_type",
+            "fieldtype": "Select",
+            "options": "Small\nMedium\nLarge",
+            "reqd": 1
+        },
+        {
+            "label": "RAM (GB)",
+            "fieldname": "ram",
+            "fieldtype": "Int"
+        },
+        {
+            "label": "CPU Cores",
+            "fieldname": "cpu_cores",
+            "fieldtype": "Int"
+        },
+        {
+            "label": "Status",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "options": "Active\nStopped\nTerminated",
+            "default": "Active"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Cloud Admin",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1,
+            "share": 1,
+            "report": 1
+        },
+        {
+            "role": "Cloud Staff",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "export": 1
+        },
+        {
+            "role": "Customer",
+            "permlevel": 1,
+            "read": 1,
+            "user_permission_applies": 1,
+            "email": 1,
+            "print": 1
+        }
+    ],
+    "actions": [],
+    "links": [],
+    "states": []
+}

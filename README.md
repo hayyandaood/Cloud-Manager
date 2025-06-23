@@ -1,6 +1,6 @@
-## Cloud Manager
+## Cloud manager
 
-Cloud Hosting Management Module for Frappe
+Cloud Manager
 
 #### License
 
