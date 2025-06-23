@@ -2,6 +2,7 @@
     "doctype": "DocType",
     "name": "Cloud Customer",
     "module": "Cloud Manager",
+    "custom": 0,
     "autoname": "format:CM-{#####}",
     "engine": "InnoDB",
     "index_web_pages_for_search": 1,
@@ -11,7 +12,8 @@
         "customer_name",
         "email",
         "phone",
-        "address"
+        "address",
+        "customer_user"
     ],
     "fields": [
         {
@@ -37,6 +39,13 @@
             "label": "Address",
             "fieldname": "address",
             "fieldtype": "Text"
+        },
+        {
+            "label": "User ID",
+            "fieldname": "customer_user",
+            "fieldtype": "Link",
+            "options": "User",
+            "read_only": 1
         }
     ],
     "permissions": [
@@ -67,14 +76,21 @@
             "export": 1
         },
         {
-            "role": "Customer",
-            "permlevel": 1,
+            "role": "Cloud Customer",
+            "permlevel": 0,
             "read": 1,
             "write": 1,
             "user_permission_applies": 1,
             "email": 1,
             "print": 1
         }
+    ],
+    "links": [
+        {"link_doctype": "Cloud Subscription", "link_fieldname": "customer"},
+        {"link_doctype": "Cloud Invoice", "link_fieldname": "customer"},
+        {"link_doctype": "Support Ticket", "link_fieldname": "customer"},
+        {"link_doctype": "Dashboard Configuration", "link_fieldname": "customer"},
+        {"link_doctype": "Access Token", "link_fieldname": "customer"}
     ],
     "actions": [],
     "states": []

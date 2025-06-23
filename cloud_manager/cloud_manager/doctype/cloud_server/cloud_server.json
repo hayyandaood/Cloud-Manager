@@ -2,56 +2,71 @@
     "doctype": "DocType",
     "name": "Cloud Server",
     "module": "Cloud Manager",
-    "autoname": "format:SVR-{#####}",
+    "custom": 0,
+    "autoname": "format:SRV-{#####}",
     "engine": "InnoDB",
     "index_web_pages_for_search": 1,
     "sort_field": "modified",
     "sort_order": "DESC",
     "field_order": [
-        "customer_id",
-        "server_name",
-        "server_type",
-        "ram",
+        "resource_name",
+        "resource_type",
+        "cloud_subscription",
+        "status",
         "cpu_cores",
-        "status"
+        "ram_gb",
+        "storage_gb",
+        "usage_logs"
     ],
     "fields": [
         {
-            "label": "Customer",
-            "fieldname": "customer_id",
-            "fieldtype": "Link",
-            "options": "Cloud Customer",
-            "reqd": 1
-        },
-        {
-            "label": "Server Name",
-            "fieldname": "server_name",
+            "fieldname": "resource_name",
+            "label": "Resource Name",
             "fieldtype": "Data",
             "reqd": 1
         },
         {
-            "label": "Server Type",
-            "fieldname": "server_type",
+            "fieldname": "resource_type",
+            "label": "Type",
             "fieldtype": "Select",
-            "options": "Small\nMedium\nLarge",
+            "options": "VPS\nStorage\nLoad Balancer",
             "reqd": 1
         },
         {
-            "label": "RAM (GB)",
-            "fieldname": "ram",
-            "fieldtype": "Int"
+            "fieldname": "cloud_subscription",
+            "label": "Cloud Subscription",
+            "fieldtype": "Link",
+            "options": "Cloud Subscription",
+            "reqd": 1
         },
         {
-            "label": "CPU Cores",
-            "fieldname": "cpu_cores",
-            "fieldtype": "Int"
-        },
-        {
-            "label": "Status",
             "fieldname": "status",
+            "label": "Status",
             "fieldtype": "Select",
             "options": "Active\nStopped\nTerminated",
-            "default": "Active"
+            "default": "Active",
+            "reqd": 1
+        },
+        {
+            "fieldname": "cpu_cores",
+            "fieldtype": "Int",
+            "label": "CPU Cores"
+        },
+        {
+            "fieldname": "ram_gb",
+            "fieldtype": "Float",
+            "label": "RAM (GB)"
+        },
+        {
+            "fieldname": "storage_gb",
+            "fieldtype": "Float",
+            "label": "Storage (GB)"
+        },
+        {
+            "fieldname": "usage_logs",
+            "fieldtype": "Table",
+            "label": "Usage Logs",
+            "options": "Server Usage Log"
         }
     ],
     "permissions": [
@@ -82,15 +97,18 @@
             "export": 1
         },
         {
-            "role": "Customer",
-            "permlevel": 1,
+            "role": "Cloud Customer",
+            "permlevel": 0,
             "read": 1,
             "user_permission_applies": 1,
             "email": 1,
             "print": 1
         }
     ],
+    "links": [
+        {"link_doctype": "Resource Access Log", "link_fieldname": "resource"},
+        {"link_doctype": "Cloud Invoice Item", "link_fieldname": "server"}
+    ],
     "actions": [],
-    "links": [],
     "states": []
 }

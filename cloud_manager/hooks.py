@@ -21,6 +21,20 @@ app_license = "mit"
 # 	}
 # ]
 
+portal_menu_items = [
+    {"title": "My Resources", "route": "/my-resources", "reference_doctype": "Cloud Server", "role": "Cloud Customer"},
+    {"title": "My Invoices", "route": "/my-invoices", "reference_doctype": "Invoice", "role": "Cloud Customer"},
+    {"title": "My Cloud Subscriptions", "route": "/my-subscriptions", "reference_doctype": "Cloud Subscription", "role": "Cloud Customer"},
+    {"title": "Dashboard", "route": "/cloud-portal", "reference_doctype": "Cloud Customer", "role": "Cloud Customer"}
+]
+
+website_route_rules = [
+    {"from_route": "/cloud-portal", "to_route": "cloud_manager.www.cloud_portal"},
+    {"from_route": "/my-resources", "to_route": "cloud_manager.www.my-resources"},
+    {"from_route": "/my-invoices", "to_route": "cloud_manager.www.my-invoices"},
+    {"from_route": "/my-subscriptions", "to_route": "cloud_manager.www.my-subscriptions"}
+]
+
 # Includes in <head>
 # ------------------
 
