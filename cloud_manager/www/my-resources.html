@@ -1,0 +1,9 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<h2>My Resources</h2>
+<ul>
+    {% for doc in frappe.get_all("Cloud Server", filters={"cloud_subscription.customer": frappe.form_dict.get("customer") or frappe.db.get_value("Cloud Customer", {"email": frappe.session.user}, "name")}, fields=["name", "resource_name", "status", "resource_type"]) %}
+        <li>{{ doc.resource_name }} ({{ doc.resource_type }}) - {{ doc.status }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

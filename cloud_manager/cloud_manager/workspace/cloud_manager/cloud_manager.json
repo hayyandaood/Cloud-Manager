@@ -1,0 +1,170 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"r6CVsbeV1T\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Cloud Manager</span>\",\"col\":12}},{\"id\":\"iTlZu43W8A\",\"type\":\"card\",\"data\":{\"card_name\":\"Cloud Manager\",\"col\":4}}]",
+ "creation": "2025-06-24 18:40:49.133654",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "customer",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Cloud Manager",
+ "links": [
+  {
+   "description": "Cloud Manager",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Manager",
+   "link_count": 13,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Customer",
+   "link_count": 0,
+   "link_to": "Cloud Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Server",
+   "link_count": 0,
+   "link_to": "Cloud Server",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Subscription",
+   "link_count": 0,
+   "link_to": "Cloud Subscription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Subscription Plan",
+   "link_count": 0,
+   "link_to": "Cloud Subscription Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Invoice",
+   "link_count": 0,
+   "link_to": "Cloud Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Invoice Item",
+   "link_count": 0,
+   "link_to": "Cloud Invoice Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Payment",
+   "link_count": 0,
+   "link_to": "Cloud Payment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Access Token",
+   "link_count": 0,
+   "link_to": "Access Token",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Resource Access Log",
+   "link_count": 0,
+   "link_to": "Resource Access Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Server Usage Log",
+   "link_count": 0,
+   "link_to": "Server Usage Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Support Ticket",
+   "link_count": 0,
+   "link_to": "Support Ticket",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dashboard Configuration",
+   "link_count": 0,
+   "link_to": "Dashboard Configuration",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cloud Manager Settings",
+   "link_count": 0,
+   "link_to": "Cloud Manager Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-06-24 18:50:21.859478",
+ "modified_by": "Administrator",
+ "module": "Cloud manager",
+ "name": "Cloud Manager",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [],
+ "title": "Cloud Manager"
+}

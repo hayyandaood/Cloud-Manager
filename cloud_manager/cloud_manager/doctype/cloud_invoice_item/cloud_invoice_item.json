@@ -1,6 +1,6 @@
 {
     "doctype": "DocType",
-    "name": "Cloud Invoice Item",
+    "name": "Invoice Item",
     "module": "Cloud Manager",
     "custom": 0,
     "is_child_table": 1,
@@ -8,11 +8,6 @@
     "index_web_pages_for_search": 0,
     "sort_field": "modified",
     "sort_order": "DESC",
-    "field_order": [
-        "server",
-        "description",
-        "amount"
-    ],
     "fields": [
         {
             "fieldname": "server",
@@ -62,8 +57,5 @@
             "email": 1,
             "print": 1
         }
-    ],
-    "links": [],
-    "actions": [],
-    "states": []
+    ]
 }

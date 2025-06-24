@@ -1,0 +1,9 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<h2>My Invoices</h2>
+<ul>
+    {% for doc in frappe.get_all("Cloud Invoice", filters={"customer": frappe.form_dict.get("customer") or frappe.db.get_value("Cloud Customer", {"email": frappe.session.user}, "name")}, fields=["name", "total_amount", "status", "invoice_date"]) %}
+        <li>{{ doc.name }} - {{ doc.total_amount }} - {{ doc.status }} - {{ doc.invoice_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
