@@ -13,3 +13,5 @@ class CloudInvoice(Document):
     def validate(self):
         if not self.items:
             frappe.throw("At least one invoice item is required")
+    
+    
