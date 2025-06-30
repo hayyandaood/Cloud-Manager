@@ -1,95 +1,123 @@
 {
-    "doctype": "DocType",
-    "name": "Cloud Subscription",
-    "module": "Cloud Manager",
-    "custom": 0,
-    "autoname": "format:SUB-{#####}",
-    "engine": "InnoDB",
-    "index_web_pages_for_search": 1,
-    "sort_field": "start_date",
-    "sort_order": "DESC",
-    "field_order": [
-        "customer",
-        "plan",
-        "start_date",
-        "end_date",
-        "status"
-    ],
-    "fields": [
-        {
-            "fieldname": "customer",
-            "label": "Customer",
-            "fieldtype": "Link",
-            "options": "Cloud Customer",
-            "reqd": 1
-        },
-        {
-            "fieldname": "plan",
-            "label": "Plan",
-            "fieldtype": "Link",
-            "options": "Cloud Subscription Plan",
-            "reqd": 1
-        },
-        {
-            "fieldname": "start_date",
-            "label": "Start Date",
-            "fieldtype": "Date",
-            "reqd": 1
-        },
-        {
-            "fieldname": "end_date",
-            "label": "End Date",
-            "fieldtype": "Date"
-        },
-        {
-            "fieldname": "status",
-            "label": "Status",
-            "fieldtype": "Select",
-            "options": "Active\nSuspended\nCancelled",
-            "default": "Active",
-            "reqd": 1
-        }
-    ],
-    "permissions": [
-        {
-            "role": "Cloud Admin",
-            "permlevel": 0,
-            "read": 1,
-            "write": 1,
-            "create": 1,
-            "delete": 1,
-            "submit": 1,
-            "cancel": 1,
-            "amend": 1,
-            "email": 1,
-            "print": 1,
-            "export": 1,
-            "share": 1,
-            "report": 1
-        },
-        {
-            "role": "Cloud Staff",
-            "permlevel": 0,
-            "read": 1,
-            "write": 1,
-            "create": 1,
-            "email": 1,
-            "print": 1,
-            "export": 1
-        },
-        {
-            "role": "Cloud Customer",
-            "permlevel": 0,
-            "read": 1,
-            "user_permission_applies": 1,
-            "email": 1,
-            "print": 1
-        }
-    ],
-    "links": [
-        {"link_doctype": "Cloud Server", "link_fieldname": "cloud_subscription"},
-        {"link_doctype": "Invoice", "link_fieldname": "cloud_subscription"}
-    ],
-    "actions": [],
-    "states": []
+ "actions": [],
+ "autoname": "format:SUB-{#####}",
+ "creation": "2025-06-23 22:02:38.730532",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "customer_name",
+  "plan",
+  "plan_name",
+  "column_break_ehdm",
+  "start_date",
+  "end_date",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Cloud Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Plan",
+   "options": "Cloud Subscription Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nSuspended\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "plan.plan_name",
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ehdm",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Cloud Server",
+   "link_fieldname": "cloud_subscription"
+  },
+  {
+   "link_doctype": "Cloud Invoice",
+   "link_fieldname": "cloud_subscription"
+  }
+ ],
+ "modified": "2025-06-30 08:47:05.485812",
+ "modified_by": "Administrator",
+ "module": "Cloud manager",
+ "name": "Cloud Subscription",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cloud Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Cloud Staff",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Cloud Customer"
+  }
+ ],
+ "sort_field": "start_date",
+ "sort_order": "DESC",
+ "states": []
 }

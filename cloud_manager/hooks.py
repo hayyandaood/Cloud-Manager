@@ -28,6 +28,25 @@ portal_menu_items = [
     {"title": "Dashboard", "route": "/cloud-portal", "reference_doctype": "Cloud Customer", "role": "Cloud Customer"}
 ]
 
+
+fixtures = [
+    {"dt": "Cloud Subscription Plan"},
+    {"dt": "Cloud Customer"},
+    {"dt": "Cloud Subscription"},
+    {"dt": "Cloud Server"},
+    {"dt": "Cloud Invoice"},
+    {"dt": "Cloud Invoice Item"},
+    {"dt": "Cloud Payment"},
+    {"dt": "Support Ticket"},
+    {"dt": "Resource Access Log"},
+    {"dt": "Access Token"},
+    {"dt": "Dashboard Configuration"},
+    {"dt": "Server Usage Log"}
+]
+
+website_route_rules = [
+    {"from_route": "/cloud-portal", "to_route": "cloud_manager.www.cloud-portal"}
+]
 # website_route_rules = [
 #     {"from_route": "/cloud-portal", "to_route": "cloud_manager.www.cloud_portal"},
 #     {"from_route": "/my-resources", "to_route": "cloud_manager.www.my-resources"},

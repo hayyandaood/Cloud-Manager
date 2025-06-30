@@ -1,0 +1,39 @@
+graph TD
+    A[User requests /cloud-portal?customer=CM-00001] -->|HTTP GET| B{Frappe Router}
+    B -->|hooks.py: /cloud-portal to cloud_portal| C[Execute cloud_portal.py]
+    C -->|get_context| D{Check customer=CM-00001 or user email}
+    D -->|frappe.form_dict.customer or frappe.session.user| E[Query Cloud Customer CM-00001]
+    D -->|No customer param or session user| F[Error: Customer not found]
+    E -->|frappe.db.get_value| G{Customer CM-00001 exists?}
+    G -->|Yes| H[Set context.customer to CM-00001]
+    G -->|No| F
+    H -->|frappe.get_doc| I[Render cloud_portal.html]
+    I -->|Load script| J[Execute cloud_portal.js]
+    J -->|frappe.utils.get_url_arg| K{Customer param CM-00001?}
+    K -->|Yes| L[Call get_customer_data API with CM-00001]
+    K -->|No| M[Error: Customer ID required]
+    L -->|frappe.call| N{Verify permissions in api.py}
+    N -->|Cloud Admin, Cloud Staff, or email=john.doe@example.com| O[Query DocTypes for CM-00001]
+    N -->|Unauthorized| P[Error: Unauthorized access]
+    O --> Q[Cloud Customer: CM-00001]
+    O --> R[Cloud Subscription: SUB-00001, SUB-00002]
+    O --> S[Cloud Invoice: INV-00001, INV-00002]
+    O --> T[Cloud Server: SRV-00001, SRV-00002]
+    S --> U[Validate Cloud Invoice Items in invoice_item.py]
+    U -->|Valid amounts and servers| V[Return invoices: Unpaid, Paid]
+    U -->|Invalid amount or server| W[Error: Invalid Cloud Invoice Item]
+    Q --> X[Return customer: John Doe]
+    R --> Y[Return subscriptions: Basic, Standard]
+    T --> Z[Return servers: Web Server 1, Database Server 1]
+    V --> AA[Populate #invoices: INV-00001, INV-00002]
+    X --> AB[Populate #customer-profile: John Doe]
+    Y --> AC[Populate #cloud_subscriptions: SUB-00001, SUB-00002]
+    Z --> AD[Populate #servers: SRV-00001, SRV-00002]
+    AB --> AE[Display Dashboard]
+    AC --> AE
+    AA --> AE
+    AD --> AE
+    F --> AF[Log error in web.log]
+    M --> AF
+    P --> AF
+    W --> AF

@@ -1,61 +1,44 @@
 {
-    "doctype": "DocType",
-    "name": "Invoice Item",
-    "module": "Cloud Manager",
-    "custom": 0,
-    "is_child_table": 1,
-    "engine": "InnoDB",
-    "index_web_pages_for_search": 0,
-    "sort_field": "modified",
-    "sort_order": "DESC",
-    "fields": [
-        {
-            "fieldname": "server",
-            "label": "Server",
-            "fieldtype": "Link",
-            "options": "Cloud Server"
-        },
-        {
-            "fieldname": "description",
-            "label": "Description",
-            "fieldtype": "Data",
-            "reqd": 1
-        },
-        {
-            "fieldname": "amount",
-            "label": "Amount",
-            "fieldtype": "Currency",
-            "reqd": 1
-        }
-    ],
-    "permissions": [
-        {
-            "role": "Cloud Admin",
-            "permlevel": 0,
-            "read": 1,
-            "write": 1,
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "print": 1,
-            "export": 1
-        },
-        {
-            "role": "Cloud Staff",
-            "permlevel": 0,
-            "read": 1,
-            "write": 1,
-            "email": 1,
-            "print": 1,
-            "export": 1
-        },
-        {
-            "role": "Cloud Customer",
-            "permlevel": 0,
-            "read": 1,
-            "user_permission_applies": 1,
-            "email": 1,
-            "print": 1
-        }
-    ]
+ "actions": [],
+ "creation": "2025-06-30 06:43:55.958975",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "server",
+  "description",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Cloud Server"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-30 09:29:53.495579",
+ "modified_by": "Administrator",
+ "module": "Cloud manager",
+ "name": "Cloud Invoice Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
 }

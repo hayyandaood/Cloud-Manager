@@ -1,12 +1,23 @@
-{% extends "templates/web.html" %}
-{% block page_content %}
-<h1>Cloud Manager Dashboard</h1>
-<div id="customer-profile"></div>
-<h2>My Resources</h2>
-<div id="servers"></div>
-<h2>My Subscription Plans</h2>
-<div id="subscription_plans"></div>
-<h2>My Invoices</h2>
-<div id="invoices"></div>
-<script src="/assets/cloud_manager/js/cloud_portal.js"></script>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Portal</title>
+    {{ include_style("/assets/cloud_manager/css/cloud_portal.css") }}
+</head>
+<body>
+    <div class="container">
+        <h1>Cloud Portal</h1>
+        <div id="customer-profile"></div>
+        <h2>Subscriptions</h2>
+        <div id="cloud_subscriptions"></div>
+        <h2>Servers</h2>
+        <div id="servers"></div>
+        <h2>Invoices</h2>
+        <div id="invoices"></div>
+    </div>
+    <script>
+        var customer_id = "{{ customer.name }}";
+    </script>
+    {{ include_script("/assets/cloud_manager/js/cloud_portal.js") }}
+</body>
+</html>

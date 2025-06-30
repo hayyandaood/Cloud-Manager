@@ -7,7 +7,7 @@ class CloudCustomer(Document):
             frappe.throw("Email already exists")
 
     def on_update(self):
-        #self.add_user()
+        self.add_user()
         pass
 
     def add_user(self):

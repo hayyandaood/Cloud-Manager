@@ -1,0 +1,11 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2 {
+    color: #333;
+}
+#customer-profile, #cloud_subscriptions, #servers, #invoices {
+    margin-bottom: 20px;
+}

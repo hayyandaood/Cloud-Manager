@@ -17,9 +17,9 @@ frappe.ui.form.on("Cloud Server", {
             });
         }
     },
-    subscription: function(frm) {
-        if (frm.doc.subscription) {
-            frappe.db.get_doc("Cloud Subscription", frm.doc.subscription).then(sub => {
+    cloud_subscription: function(frm) {
+        if (frm.doc.cloud_subscription) {
+            frappe.db.get_doc("Cloud Subscription", frm.doc.cloud_subscription).then(sub => {
                 frappe.db.get_doc("Cloud Subscription Plan", sub.plan).then(plan => {
                     frm.set_value("cpu_cores", plan.cpu_cores);
                     frm.set_value("ram_gb", plan.ram_gb);

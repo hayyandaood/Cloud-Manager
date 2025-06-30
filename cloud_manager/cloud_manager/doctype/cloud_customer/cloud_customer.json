@@ -92,6 +92,7 @@
         {"link_doctype": "Dashboard Configuration", "link_fieldname": "customer"},
         {"link_doctype": "Access Token", "link_fieldname": "customer"}
     ],
+    
     "actions": [],
     "states": []
 }

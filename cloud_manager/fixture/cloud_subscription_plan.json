@@ -1,0 +1,5 @@
+[
+    {"doctype": "Cloud Subscription Plan", "plan_name": "Basic", "cpu_cores": 1, "ram_gb": 2, "storage_gb": 20, "monthly_price": 50},
+    {"doctype": "Cloud Subscription Plan", "plan_name": "Standard", "cpu_cores": 2, "ram_gb": 4, "storage_gb": 50, "monthly_price": 100},
+    {"doctype": "Cloud Subscription Plan", "plan_name": "Premium", "cpu_cores": 4, "ram_gb": 8, "storage_gb": 100, "monthly_price": 200}
+]

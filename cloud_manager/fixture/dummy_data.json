@@ -1,0 +1,413 @@
+[
+    {
+        "doctype": "Cloud Customer",
+        "name": "CM-00001",
+        "customer_name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "123-456-7890",
+        "address": "123 Main St, Cloud City",
+        "customer_user": "john.doe@example.com"
+    },
+    {
+        "doctype": "Cloud Customer",
+        "name": "CM-00002",
+        "customer_name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "phone": "987-654-3210",
+        "address": "456 Cloud Ave, Sky Town",
+        "customer_user": "jane.smith@example.com"
+    },
+    {
+        "doctype": "Cloud Customer",
+        "name": "CM-00003",
+        "customer_name": "Acme Corp",
+        "email": "acme.corp@example.com",
+        "phone": "555-123-4567",
+        "address": "789 Enterprise Rd, Tech City",
+        "customer_user": "acme.corp@example.com"
+    },
+    {
+        "doctype": "Cloud Subscription",
+        "name": "SUB-00001",
+        "customer": "CM-00001",
+        "plan": "Basic",
+        "start_date": "2025-06-01",
+        "end_date": "2025-06-30",
+        "status": "Active"
+    },
+    {
+        "doctype": "Cloud Subscription",
+        "name": "SUB-00002",
+        "customer": "CM-00001",
+        "plan": "Standard",
+        "start_date": "2025-06-01",
+        "end_date": "2025-06-30",
+        "status": "Active"
+    },
+    {
+        "doctype": "Cloud Subscription",
+        "name": "SUB-00003",
+        "customer": "CM-00002",
+        "plan": "Premium",
+        "start_date": "2025-06-15",
+        "end_date": "2025-07-15",
+        "status": "Active"
+    },
+    {
+        "doctype": "Cloud Subscription",
+        "name": "SUB-00004",
+        "customer": "CM-00002",
+        "plan": "Basic",
+        "start_date": "2025-05-01",
+        "end_date": "2025-05-31",
+        "status": "Cancelled"
+    },
+    {
+        "doctype": "Cloud Subscription",
+        "name": "SUB-00005",
+        "customer": "CM-00003",
+        "plan": "Standard",
+        "start_date": "2025-06-01",
+        "end_date": "2025-06-30",
+        "status": "Suspended"
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00001",
+        "resource_name": "Web Server 1",
+        "resource_type": "VPS",
+        "cloud_subscription": "SUB-00001",
+        "status": "Active",
+        "cpu_cores": 1,
+        "ram_gb": 2,
+        "storage_gb": 20,
+        "usage_logs": [
+            {
+                "doctype": "Server Usage Log",
+                "timestamp": "2025-06-30 08:00:00",
+                "cpu_usage": 45,
+                "ram_usage": 1.5,
+                "storage_usage": 15
+            },
+            {
+                "doctype": "Server Usage Log",
+                "timestamp": "2025-06-30 09:00:00",
+                "cpu_usage": 60,
+                "ram_usage": 1.8,
+                "storage_usage": 16
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00002",
+        "resource_name": "Database Server 1",
+        "resource_type": "VPS",
+        "cloud_subscription": "SUB-00002",
+        "status": "Active",
+        "cpu_cores": 2,
+        "ram_gb": 4,
+        "storage_gb": 50,
+        "usage_logs": [
+            {
+                "doctype": "Server Usage Log",
+                "timestamp": "2025-06-30 08:30:00",
+                "cpu_usage": 70,
+                "ram_usage": 3.5,
+                "storage_usage": 40
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00003",
+        "resource_name": "Storage 1",
+        "resource_type": "Storage",
+        "cloud_subscription": "SUB-00003",
+        "status": "Active",
+        "cpu_cores": 0,
+        "ram_gb": 0,
+        "storage_gb": 100,
+        "usage_logs": [
+            {
+                "doctype": "Server Usage Log",
+                "timestamp": "2025-06-30 09:15:00",
+                "cpu_usage": 0,
+                "ram_usage": 0,
+                "storage_usage": 80
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00004",
+        "resource_name": "Web Server 2",
+        "resource_type": "VPS",
+        "cloud_subscription": "SUB-00003",
+        "status": "Stopped",
+        "cpu_cores": 4,
+        "ram_gb": 8,
+        "storage_gb": 100
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00005",
+        "resource_name": "Load Balancer 1",
+        "resource_type": "Load Balancer",
+        "cloud_subscription": "SUB-00005",
+        "status": "Active",
+        "cpu_cores": 2,
+        "ram_gb": 4,
+        "storage_gb": 0
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00006",
+        "resource_name": "Backup Server",
+        "resource_type": "Storage",
+        "cloud_subscription": "SUB-00004",
+        "status": "Terminated",
+        "cpu_cores": 1,
+        "ram_gb": 2,
+        "storage_gb": 20
+    },
+    {
+        "doctype": "Cloud Server",
+        "name": "SRV-00007",
+        "resource_name": "App Server 1",
+        "resource_type": "VPS",
+        "cloud_subscription": "SUB-00005",
+        "status": "Active",
+        "cpu_cores": 2,
+        "ram_gb": 4,
+        "storage_gb": 50,
+        "usage_logs": [
+            {
+                "doctype": "Server Usage Log",
+                "timestamp": "2025-06-30 08:45:00",
+                "cpu_usage": 55,
+                "ram_usage": 3.0,
+                "storage_usage": 45
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Invoice",
+        "name": "INV-00001",
+        "customer": "CM-00001",
+        "cloud_subscription": "SUB-00001",
+        "invoice_date": "2025-06-30",
+        "status": "Unpaid",
+        "total_amount": 50,
+        "items": [
+            {
+                "doctype": "Cloud Invoice Item",
+                "description": "Subscription: Basic",
+                "amount": 50,
+                "server": "SRV-00001"
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Invoice",
+        "name": "INV-00002",
+        "customer": "CM-00001",
+        "cloud_subscription": "SUB-00002",
+        "invoice_date": "2025-06-30",
+        "status": "Paid",
+        "total_amount": 100,
+        "items": [
+            {
+                "doctype": "Cloud Invoice Item",
+                "description": "Subscription: Standard",
+                "amount": 100,
+                "server": "SRV-00002"
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Invoice",
+        "name": "INV-00003",
+        "customer": "CM-00002",
+        "cloud_subscription": "SUB-00003",
+        "invoice_date": "2025-06-30",
+        "status": "Unpaid",
+        "total_amount": 200,
+        "items": [
+            {
+                "doctype": "Cloud Invoice Item",
+                "description": "Subscription: Premium",
+                "amount": 200,
+                "server": "SRV-00003"
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Invoice",
+        "name": "INV-00004",
+        "customer": "CM-00002",
+        "cloud_subscription": "SUB-00004",
+        "invoice_date": "2025-05-31",
+        "status": "Paid",
+        "total_amount": 50,
+        "items": [
+            {
+                "doctype": "Cloud Invoice Item",
+                "description": "Subscription: Basic",
+                "amount": 50,
+                "server": "SRV-00006"
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Invoice",
+        "name": "INV-00005",
+        "customer": "CM-00003",
+        "cloud_subscription": "SUB-00005",
+        "invoice_date": "2025-06-30",
+        "status": "Overdue",
+        "total_amount": 100,
+        "items": [
+            {
+                "doctype": "Cloud Invoice Item",
+                "description": "Subscription: Standard",
+                "amount": 100,
+                "server": "SRV-00007"
+            }
+        ]
+    },
+    {
+        "doctype": "Cloud Payment",
+        "name": "PAY-00001",
+        "invoice": "INV-00002",
+        "payment_date": "2025-06-30",
+        "amount": 100,
+        "payment_method": "Card"
+    },
+    {
+        "doctype": "Cloud Payment",
+        "name": "PAY-00002",
+        "invoice": "INV-00004",
+        "payment_date": "2025-05-31",
+        "amount": 50,
+        "payment_method": "Wire"
+    },
+    {
+        "doctype": "Cloud Payment",
+        "name": "PAY-00003",
+        "invoice": "INV-00003",
+        "payment_date": "2025-06-30",
+        "amount": 100,
+        "payment_method": "UPI"
+    },
+    {
+        "doctype": "Support Ticket",
+        "name": "TICKET-00001",
+        "customer": "CM-00001",
+        "subject": "Server Down",
+        "description": "Web Server 1 is not responding.",
+        "status": "Open"
+    },
+    {
+        "doctype": "Support Ticket",
+        "name": "TICKET-00002",
+        "customer": "CM-00002",
+        "subject": "Billing Issue",
+        "description": "Incorrect invoice amount for Premium plan.",
+        "status": "In Progress"
+    },
+    {
+        "doctype": "Support Ticket",
+        "name": "TICKET-00003",
+        "customer": "CM-00003",
+        "subject": "Access Denied",
+        "description": "Cannot access Load Balancer.",
+        "status": "Open"
+    },
+    {
+        "doctype": "Support Ticket",
+        "name": "TICKET-00004",
+        "customer": "CM-00001",
+        "subject": "Storage Upgrade",
+        "description": "Need to upgrade storage for Web Server 1.",
+        "status": "Closed"
+    },
+    {
+        "doctype": "Resource Access Log",
+        "name": "LOG-00001",
+        "resource": "SRV-00001",
+        "access_time": "2025-06-30 08:00:00",
+        "access_type": "SSH",
+        "user": "john.doe@example.com"
+    },
+    {
+        "doctype": "Resource Access Log",
+        "name": "LOG-00002",
+        "resource": "SRV-00002",
+        "access_time": "2025-06-30 08:30:00",
+        "access_type": "API",
+        "user": "john.doe@example.com"
+    },
+    {
+        "doctype": "Resource Access Log",
+        "name": "LOG-00003",
+        "resource": "SRV-00003",
+        "access_time": "2025-06-30 09:00:00",
+        "access_type": "Console",
+        "user": "jane.smith@example.com"
+    },
+    {
+        "doctype": "Resource Access Log",
+        "name": "LOG-00004",
+        "resource": "SRV-00005",
+        "access_time": "2025-06-30 09:15:00",
+        "access_type": "SSH",
+        "user": "acme.corp@example.com"
+    },
+    {
+        "doctype": "Resource Access Log",
+        "name": "LOG-00005",
+        "resource": "SRV-00007",
+        "access_time": "2025-06-30 09:30:00",
+        "access_type": "API",
+        "user": "acme.corp@example.com"
+    },
+    {
+        "doctype": "Access Token",
+        "name": "TOKEN-00001",
+        "customer": "CM-00001",
+        "token": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6",
+        "is_active": 1,
+        "created_at": "2025-06-30 08:00:00"
+    },
+    {
+        "doctype": "Access Token",
+        "name": "TOKEN-00002",
+        "customer": "CM-00002",
+        "token": "q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6",
+        "is_active": 1,
+        "created_at": "2025-06-30 08:30:00"
+    },
+    {
+        "doctype": "Access Token",
+        "name": "TOKEN-00003",
+        "customer": "CM-00003",
+        "token": "z1x2c3v4b5n6m7a8s9d0f1g2h3j4k5l6",
+        "is_active": 0,
+        "created_at": "2025-06-29 09:00:00"
+    },
+    {
+        "doctype": "Dashboard Configuration",
+        "name": "DASH-CM-00001",
+        "customer": "CM-00001",
+        "show_usage_charts": 1,
+        "show_server_status": 1
+    },
+    {
+        "doctype": "Dashboard Configuration",
+        "name": "DASH-CM-00002",
+        "customer": "CM-00002",
+        "show_usage_charts": 0,
+        "show_server_status": 1
+    }
+]
