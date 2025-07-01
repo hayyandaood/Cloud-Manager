@@ -22,11 +22,12 @@ app_license = "mit"
 # ]
 
 portal_menu_items = [
-    {"title": "My Resources", "route": "/my-resources", "reference_doctype": "Cloud Server", "role": "Cloud Customer"},
-    {"title": "My Invoices", "route": "/my-invoices", "reference_doctype": "Cloud Invoice", "role": "Cloud Customer"},
-    {"title": "My Cloud Subscriptions", "route": "/my-subscriptions", "reference_doctype": "Cloud Subscription", "role": "Cloud Customer"},
-    {"title": "Dashboard", "route": "/cloud-portal", "reference_doctype": "Cloud Customer", "role": "Cloud Customer"}
+    #{"title": "My Resources", "route": "/my-resources", "reference_doctype": "Cloud Server", "role": "Cloud Customer"},
+    #{"title": "My Invoices", "route": "/my-invoices", "reference_doctype": "Cloud Invoice", "role": "Cloud Customer"},
+    #{"title": "My Cloud Subscriptions", "route": "/my-subscriptions", "reference_doctype": "Cloud Subscription", "role": "Cloud Customer"},
+    {"title": "Dashboard", "route": "/cloud_portal", "reference_doctype": "Cloud Customer", "role": "Cloud Customer"}
 ]
+
 
 
 fixtures = [
@@ -45,7 +46,7 @@ fixtures = [
 ]
 
 website_route_rules = [
-    {"from_route": "/cloud-portal", "to_route": "cloud_manager.www.cloud-portal"}
+    #{"from_route": "/cloud-portal", "to_route": "cloud_manager.cloud_manager.www.cloud-portal"}
 ]
 # website_route_rules = [
 #     {"from_route": "/cloud-portal", "to_route": "cloud_manager.www.cloud_portal"},

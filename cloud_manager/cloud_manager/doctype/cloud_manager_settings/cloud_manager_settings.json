@@ -3,7 +3,7 @@
     "name": "Cloud Manager Settings",
     "module": "Cloud Manager",
     "custom": 0,
-    "is_single": 1,
+    "issingle": 1,
     "engine": "InnoDB",
     "index_web_pages_for_search": 0,
     "sort_field": "modified",

@@ -1,15 +1,17 @@
 frappe.ready(function() {
     var customer_id = frappe.utils.get_url_arg("customer") || customer_id;
+    console.log("CUSTOMER", frappe.session.user)
     if (!customer_id) {
         frappe.msgprint("Customer ID required");
         return;
     }
-    
+    console.log("CUSTOMER1", frappe.session.user)
     frappe.call({
         method: "cloud_manager.api.get_customer_data",
         args: { customer_id: customer_id },
         callback: function(r) {
             if (r.message) {
+                console.log("CUSTOMER11", frappe.session.user)
                 var data = r.message;
                 $("#customer-profile").html(`
                     <p><strong>Name:</strong> ${data.customer.customer_name}</p>

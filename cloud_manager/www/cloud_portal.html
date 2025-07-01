@@ -1,0 +1,92 @@
+{% extends "templates/web.html" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/assets/cloud_manager/css/cloud_portal.css" />
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    
+    <h1>Welcome, {{ customer.customer_name }}</h1>
+    <p>Email: {{ customer.email }}</p>
+    
+    <h2>Your Subscriptions</h2>
+    {% if subscriptions %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Plan</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sub in subscriptions %}
+                <tr>
+                    <td><a href="/app/cloud-subscription/{{ sub.name }}">{{ sub.name }}</a></td>
+                    <td>{{ sub.plan }}</td>
+                    <td>{{ sub.start_date }}</td>
+                    <td>{{ sub.end_date }}</td>
+                    <td>{{ sub.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No subscriptions found.</p>
+    {% endif %}
+    
+    <h2>Your Servers</h2>
+    {% if servers %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Resource</th>
+                    <th>Subscription</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for server in servers %}
+                <tr>
+                    <td>{{ server.name }}</td>
+                    <td>{{ server.resource_name }}</td>
+                    <td><a href="/app/cloud-subscription/{{ server.cloud_subscription }}">{{ server.cloud_subscription }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No servers found.</p>
+    {% endif %}
+    
+    <h2>Your Invoices</h2>
+    {% if invoices %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for invoice in invoices %}
+                <tr>
+                    <td><a href="/app/cloud-invoice/{{ invoice.name }}">{{ invoice.name }}</a></td>
+                    <td>{{ invoice.invoice_date }}</td>
+                    <td>{{ invoice.total_amount }}</td>
+                    <td>{{ invoice.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No invoices found.</p>
+    {% endif %}
+</div>
+{% endblock %}

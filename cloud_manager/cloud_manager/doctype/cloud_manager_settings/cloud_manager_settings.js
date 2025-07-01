@@ -1,7 +1,8 @@
-frappe.ui.form.on("Cloud Manager Settings", {
-    refresh: function(frm) {
-        if (!frappe.user.has_role("Cloud Admin")) {
-            frm.disable_form();
-        }
-    }
-});
+// Copyright (c) 2025, hayyan daood and contributors
+// For license information, please see license.txt
+
+// frappe.ui.form.on("Cloud Manager Settings", {
+// 	refresh(frm) {
+
+// 	},
+// });
